@@ -24,6 +24,7 @@
 		91442C202C17E5C5009B970F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91442C1F2C17E5C5009B970F /* main.cpp */; };
 		91442C232C17E6E2009B970F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 91442C212C17E6E2009B970F /* sqlite3.c */; };
 		91442C242C17E6E2009B970F /* sqlite3.h in Sources */ = {isa = PBXBuildFile; fileRef = 91442C222C17E6E2009B970F /* sqlite3.h */; };
+		91442C302C17EFCF009B970F /* studentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C2F2C17EFCF009B970F /* studentInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		91442C2C2C17E7AD009B970F /* Courses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
 		91442C2D2C17E7B6009B970F /* Assignments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assignments.h; sourceTree = "<group>"; };
 		91442C2E2C17E7BD009B970F /* Quizes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quizes.h; sourceTree = "<group>"; };
+		91442C2F2C17EFCF009B970F /* studentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				91442C172C17E54E009B970F /* CourseView.swift */,
 				91442C192C17E55E009B970F /* LoginView.swift */,
 				91442C1B2C17E56A009B970F /* LockView.swift */,
+				91442C2F2C17EFCF009B970F /* studentInfo.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				91442C242C17E6E2009B970F /* sqlite3.h in Sources */,
 				91442C102C17E511009B970F /* HomeView.swift in Sources */,
 				91442C182C17E54E009B970F /* CourseView.swift in Sources */,
+				91442C302C17EFCF009B970F /* studentInfo.swift in Sources */,
 				91442C162C17E547009B970F /* SubjectView.swift in Sources */,
 				91442BE22C17E4B2009B970F /* ContentView.swift in Sources */,
 				91442C142C17E53D009B970F /* ProfileView.swift in Sources */,

@@ -8,9 +8,18 @@
 import SwiftUI
 
 
+
+
 struct CustomButton: View {
     let title: String
-  
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var rollNo: String = ""
+    @State private var gpa: String = ""
+    @State private var cgpa: String = ""
+    @State private var major: String = ""
+    @State private var semester: String = ""
+    
     var body: some View {
         Button(action: {}) {
             Text(title)
@@ -25,6 +34,14 @@ struct CustomButton: View {
     }
 }
 struct HomeView: View {
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var rollNo: String = ""
+    @State private var gpa: String = ""
+    @State private var cgpa: String = ""
+    @State private var major: String = ""
+    @State private var semester: String = ""
+    
     var body: some View {
         @State var color: Color = .white
         @State var date = Date.now
@@ -32,14 +49,10 @@ struct HomeView: View {
             LinearGradient(gradient: Gradient(colors:[.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             VStack(){
-                VStack(){
-//                    ColorPicker("", selection: $color,supportsOpacity: false).frame(maxWidth: .infinity, alignment: .leading)
-                    
-                }
                 HStack{
                     VStack(alignment: .leading){
                         Text("Home").font(.system(size:32)).fontWeight(.semibold)
-                        Text("Welcome Sara")
+                        Text("Welcome \(name)")
                     }
                     Image("pp").resizable().scaledToFit().frame(width: 60, height:60).clipShape(Circle()).padding(.leading, 150)
                 }
@@ -54,13 +67,23 @@ struct HomeView: View {
                 ScrollView(.horizontal){
                     HStack(spacing: 15){
                         
-                        CustomButton(title: "GPA: ")
-                        CustomButton(title: "Semester: ")
-                        CustomButton(title: "Degree: ")
+                        CustomButton(title: "GPA: \(gpa)")
+                        CustomButton(title: "Semester: \(semester)")
+                        CustomButton(title: "Degree: \(major)")
                         
                     }.padding(.leading, 10)
                 }
                 Spacer()
+            }
+            .onAppear {
+                let studentDetails = StudentInfo()
+                self.name = studentDetails.name
+                self.email = studentDetails.email
+                self.rollNo = studentDetails.rollNo
+                self.gpa = studentDetails.gpa
+                self.cgpa = studentDetails.cgpa
+                self.major = studentDetails.major
+                self.semester = studentDetails.semester
             }
             
            

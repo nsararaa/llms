@@ -49,11 +49,11 @@ public:
     const char* getRole() {
         return role;
     }
-    virtual ~User() {
-        delete[] name;
-        delete[] email_id;
-        delete[] password;
-        delete[] role;
-    }
+//    virtual ~User() {
+//        delete[] name;
+//        delete[] email_id;
+//        delete[] password;
+//        delete[] role;
+//    }
 };
 

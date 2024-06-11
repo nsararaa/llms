@@ -12,7 +12,7 @@ extern "C"
 const char * returnName();
 void sendEmailToCPP(const char *email);
 int isUserLoggedIn();
-
+const char * getStudentInfo();
 #ifdef __cplusplus
 }
 #endif

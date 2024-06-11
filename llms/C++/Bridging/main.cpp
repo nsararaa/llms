@@ -24,14 +24,16 @@ const char * returnName() {
     return a.getName();
     
 }
-const char * returnStudentInfo() {
+const char * getStudentInfo() {
     Student stu(1, "Manal Rehman", "manal.rehman@gmail.com", "123", "Computer Science","bscs23001", 1, 2, 3.29, 3.29);
 
     static std::string details;
        std::ostringstream oss;
        oss << stu.getName() << "," << stu.getEmailId() << "," << stu.getRollNo() << ","
-           << stu.getGPA()<< "," << stu.getCGPA()<< "," << stu.getMajor();
+           << stu.getGPA()<< "," << stu.getCGPA()<< "," << stu.getMajor() << "," << stu.getSemester();
 
+    //name email rollno gpa cgpa major sem
+    
     details = oss.str();
     const char* c_details = details.c_str();
     return c_details;

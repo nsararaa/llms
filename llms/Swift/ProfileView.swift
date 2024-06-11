@@ -8,111 +8,76 @@
 import SwiftUI
 //import SQLite
 
+
+func StudentInfo() -> (name: String, email: String, rollNo: String, gpa: String, cgpa: String, major: String, semester : String) {
+    guard let cString = getStudentInfo() else {
+        return ("", "", "", "", "", "", "")
+    }
+    //name email rollno gpa cgpa major sem
+    let studentInfo = String(cString: cString).components(separatedBy: ",")
+    if studentInfo.count == 7 {
+        return (name: studentInfo[0], email: studentInfo[1], rollNo: studentInfo[5], gpa: studentInfo[3], cgpa: studentInfo[4], major: studentInfo[2], semester : studentInfo[6])
+    }
+    return ("", "", "", "", "", "", "")
+}
+
+
 struct ProfileView: View {
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var rollNo: String = ""
+    
+
     var body: some View {
-        NavigationView{
-            ZStack{
-                LinearGradient(gradient: Gradient(colors:[.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        NavigationView {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
                 
-                VStack{
-                    HStack{
-//                        NavigationLink(destination: LoginView(isLoggedIn: .constant(false))) {
-//                            Text("Log Out")
-//                                .font(.system(size: 20))
-//                                .fontWeight(.semibold)
-//                                .foregroundColor(.black)
-//                                .cornerRadius(40)
-//
-//                        }
-//                        .padding(.horizontal, -160)
-//                        Text(" ")
-//                            .toolbar{
-//                                ToolbarItem(placement: .navigationBarTrailing){
-//                                    Menu{
-//                                        Button(action: {}, label: {
-//                                            Text("Log Out")
-//                                            LoginView(isLoggedIn: .constant(false))
-//                                        })
-//                                        .onTapGesture {
-//                                            LoginView(isLoggedIn: .constant(false))
-//                                        }
-//                                    }label: {
-//                                        Label (
-//                                            title: {Text("Add")}, icon:{ Image(systemName: "plus")}
-//                                        )
-//                                    }
-//
-//                                }
-//                            }
+                VStack {
+                    VStack {
+                        Image("pp")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 120, height: 120)
+                            .clipShape(Circle())
+                        
+                        VStack {
+                           
+                            Text(name)
+                                .font(.system(size: 19))
+                                .fontWeight(.semibold)
+                                .foregroundColor(.black)
+                                .padding(.vertical, 1)
+                            
+                            Text(email)
+                                .font(.system(size: 15))
+                                .fontWeight(.medium)
+                        }
+                        .padding(.vertical)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        
+                        Divider()
+                        Spacer()
                     }
-                    
-                    HStack{Image("pp").resizable().scaledToFit().frame(width: 120, height:120).clipShape(Circle())
-                        
-                    }
-                    
-                    VStack{
-                        Text(String(cString: returnName())).font( .system(size:19)).fontWeight(.semibold)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 1)
-                        
-                        
-                        Text("bscs23162@itu.edu.pk").font(.system(size:15)).fontWeight(.medium)}
-                    .padding(.horizontal)
-                    .frame(maxWidth:.infinity, alignment: .center)
-                    
-                    Divider()
-                    Spacer()
+                
                 }
-                
+                .onAppear {
+                    let studentDetails = StudentInfo()
+                    self.name = studentDetails.name
+                    self.email = studentDetails.email
+//                    self.rollNo = studentDetails.rollNo
+//                    self.gpa = studentDetails.gpa
+//                    self.cgpa = studentDetails.cgpa
+//                    self.major = studentDetails.major
+                }
             }
-            
-        }
-        
-                
-            
         }
     }
-
+}
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
 }
-
-//
-//
-//class DatabaseManager {
-//    var db: Connection?
-//
-//    init() {
-//        do {
-//            // Specify the path to the database
-//            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//            db = try Connection("\(path)/db.sqlite3")
-//
-//            // Create the users table
-//            try createTable()
-//        } catch {
-//            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
-//        }
-//    }
-//
-//    func createTable() throws {
-//        let users = Table("users")
-//        let id = Expression<Int64>("id")
-//        let name = Expression<String>("name")
-//        let email = Expression<String>("email")
-//
-//        do {
-//            try db?.run(users.create { table in
-//                table.column(id, primaryKey: true)
-//                table.column(name)
-//                table.column(email, unique: true)
-//            })
-//        } catch {
-//            print("Table already exists: \(error)")
-//        }
-//    }
-//}
