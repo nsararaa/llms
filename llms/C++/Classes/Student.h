@@ -14,7 +14,7 @@ protected:
     //date dob;
     int student_ID;
     const char* rollNo;
-    const char* major;
+     const char* major;
     int semester;
 
     //academic details

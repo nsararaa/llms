@@ -10,7 +10,9 @@ private:
     const char* course_name;
     int course_ID;
     int credit_Hours;
+    int noOfClasses;
     Time course_timings;
+    date course_date;
     //std::vector<std::string> weekdays;
     char grade;
 
@@ -22,6 +24,10 @@ private:
 public:
     Course(const char* _name, int _ID, int _credithours) :course_name(_name), course_ID(_ID), credit_Hours(_credithours) {}
 
+    int getNoOfClasses(){
+        return noOfClasses;
+    }
+    
     const char* getCourseName() {
         return course_name;
     }

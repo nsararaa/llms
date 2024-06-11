@@ -8,6 +8,7 @@
 class DB_helper {
 private:
     sqlite3* db;
+    
 
 public:
     DB_helper(const std::string& dbName) {
@@ -66,6 +67,10 @@ public:
 
     Student* getStudentByEmail(User* user) {
         sqlite3_stmt* stmt;
+        
+        
+        
+        
         std::string student_Id = std::to_string(user->getUserId());
         std::string selectSql = "SELECT * FROM Student WHERE student_id = '" + student_Id + "';";
 

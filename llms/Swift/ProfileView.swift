@@ -45,7 +45,6 @@ struct ProfileView: View {
                             .clipShape(Circle())
                         
                         VStack {
-                           
                             Text(name)
                                 .font(.system(size: 19))
                                 .fontWeight(.semibold)

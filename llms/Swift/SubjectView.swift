@@ -10,6 +10,7 @@ import SQLite3
 
 
 struct SubjectView: View {
+   
     let subjectName: String
     
     let information = SubjectInformation(
@@ -34,6 +35,7 @@ struct SubjectView: View {
     ]
     
     var body: some View {
+        let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
@@ -43,6 +45,7 @@ struct SubjectView: View {
                     .font(.system(size: 26))
                     .fontWeight(.bold)
                     .padding(.leading, 16)
+                    .foregroundColor(Color(maroon))
                 
                 List {
                     Section(header: Text("Instructor")) {

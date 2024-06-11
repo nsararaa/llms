@@ -24,6 +24,7 @@ struct CustomNavigationButton: View {
 }
 struct CustomButtonHori2: View {
     let title: [String]
+    let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
   
     var body: some View {
         
