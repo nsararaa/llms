@@ -11,7 +11,7 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @Binding var isLoggedIn: Bool
-    
+    let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
     var body: some View{
         NavigationStack {
             
@@ -20,7 +20,7 @@ struct LoginView: View {
                 Image("logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 200, height: 200)
                     .padding()
                 
                 VStack{
@@ -65,7 +65,7 @@ struct LoginView: View {
                             .fontWeight(.semibold)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 40)
-                            .background(.black)
+                            .background(Color(maroon))
                             .cornerRadius(8)
                         
                     }

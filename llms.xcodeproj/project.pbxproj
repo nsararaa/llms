@@ -56,7 +56,7 @@
 		91442BF72C17E4B3009B970F /* llmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = llmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91442BFB2C17E4B3009B970F /* llmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llmsUITests.swift; sourceTree = "<group>"; };
 		91442BFD2C17E4B3009B970F /* llmsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llmsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		91442C0F2C17E511009B970F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91442C0F2C17E511009B970F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		91442C112C17E530009B970F /* tabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBar.swift; sourceTree = "<group>"; };
 		91442C132C17E53D009B970F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		91442C152C17E547009B970F /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };

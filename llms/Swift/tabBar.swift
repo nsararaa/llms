@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBar: View {
+    let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
     var body: some View {
         @State var isLoggedIn: Bool = false
         TabView{
@@ -29,7 +30,7 @@ struct TabBar: View {
             
         }
         .foregroundColor(.black)
-        .accentColor(.black)
+        .accentColor(Color(maroon))
         
     }
     

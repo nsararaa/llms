@@ -33,7 +33,9 @@ struct ProfileView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
-                
+                VStack{
+                    
+                }
                 VStack {
                     VStack {
                         Image("pp")

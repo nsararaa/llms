@@ -6,10 +6,6 @@
 //
 
 import SwiftUI
-
-
-
-
 struct CustomButton: View {
     let title: String
     @State private var name: String = ""
@@ -42,6 +38,10 @@ struct HomeView: View {
     @State private var major: String = ""
     @State private var semester: String = ""
     
+    @State private var announcementInput = ""
+    @State private var upcomingDue: Bool = false
+    @State private var Deadlines = ""
+    
     var body: some View {
         @State var color: Color = .white
         @State var date = Date.now
@@ -61,17 +61,50 @@ struct HomeView: View {
                
                 VStack(){
                     Text("Announcements").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -160)
-                        
+                    
+//                    Text(announcementOutput)
+//                        .font(.subheadline)
+//                        .padding(12)
+//                        .background(Color(.systemGray6))
+//                        .lineLimit(4, reservesSpace: true)
+//                        .padding(.horizontal, 17)
+                    
+                    TextField("Announce something to your class ", text:$announcementInput, axis: .vertical)
+                        .lineLimit(4, reservesSpace: true)
+                        .font(.subheadline)
+                        .padding(12)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 24)
+                    
+                                             
                 }
-                .padding(.bottom, 130)
+                .padding(.bottom, 40)
                 ScrollView(.horizontal){
                     HStack(spacing: 15){
                         
-                        CustomButton(title: "GPA: \(gpa)")
+                        
                         CustomButton(title: "Semester: \(semester)")
+                        CustomButton(title: "GPA: \(gpa)")
+                        CustomButton(title: "CGPA: \(cgpa)")
                         CustomButton(title: "Degree: \(major)")
                         
+                        
                     }.padding(.leading, 10)
+                }
+                VStack{
+                    Text("Upcoming Deadlines").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -160)
+                        .padding(.top, 30)
+                    if upcomingDue == false{
+                        Text("Wohoo no work due soon").padding(.top, -3)
+                            .padding(.leading, -150)
+                            .foregroundColor(.gray)
+                    }
+                    else {
+                        Text(Deadlines).padding(.top, -3)
+                            .padding(.leading, -150)
+                            .foregroundColor(.gray)
+                    }
                 }
                 Spacer()
             }
