@@ -14,6 +14,16 @@
 		91442BF22C17E4B3009B970F /* llmsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442BF12C17E4B3009B970F /* llmsTests.swift */; };
 		91442BFC2C17E4B3009B970F /* llmsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442BFB2C17E4B3009B970F /* llmsUITests.swift */; };
 		91442BFE2C17E4B3009B970F /* llmsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442BFD2C17E4B3009B970F /* llmsUITestsLaunchTests.swift */; };
+		91442C102C17E511009B970F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C0F2C17E511009B970F /* HomeView.swift */; };
+		91442C122C17E530009B970F /* tabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C112C17E530009B970F /* tabBar.swift */; };
+		91442C142C17E53D009B970F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C132C17E53D009B970F /* ProfileView.swift */; };
+		91442C162C17E547009B970F /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C152C17E547009B970F /* SubjectView.swift */; };
+		91442C182C17E54E009B970F /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C172C17E54E009B970F /* CourseView.swift */; };
+		91442C1A2C17E55E009B970F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C192C17E55E009B970F /* LoginView.swift */; };
+		91442C1C2C17E56A009B970F /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C1B2C17E56A009B970F /* LockView.swift */; };
+		91442C202C17E5C5009B970F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91442C1F2C17E5C5009B970F /* main.cpp */; };
+		91442C232C17E6E2009B970F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 91442C212C17E6E2009B970F /* sqlite3.c */; };
+		91442C242C17E6E2009B970F /* sqlite3.h in Sources */ = {isa = PBXBuildFile; fileRef = 91442C222C17E6E2009B970F /* sqlite3.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,28 @@
 		91442BF72C17E4B3009B970F /* llmsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = llmsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91442BFB2C17E4B3009B970F /* llmsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llmsUITests.swift; sourceTree = "<group>"; };
 		91442BFD2C17E4B3009B970F /* llmsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = llmsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91442C0F2C17E511009B970F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91442C112C17E530009B970F /* tabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBar.swift; sourceTree = "<group>"; };
+		91442C132C17E53D009B970F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		91442C152C17E547009B970F /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		91442C172C17E54E009B970F /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		91442C192C17E55E009B970F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		91442C1B2C17E56A009B970F /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		91442C1D2C17E5B8009B970F /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		91442C1E2C17E5C4009B970F /* llms-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "llms-Bridging-Header.h"; sourceTree = "<group>"; };
+		91442C1F2C17E5C5009B970F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		91442C212C17E6E2009B970F /* sqlite3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = "sqlite-amalgamation-3440200/sqlite3.c"; sourceTree = "<group>"; };
+		91442C222C17E6E2009B970F /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = "sqlite-amalgamation-3440200/sqlite3.h"; sourceTree = "<group>"; };
+		91442C252C17E722009B970F /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		91442C262C17E77B009B970F /* DB_helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DB_helper.h; sourceTree = "<group>"; };
+		91442C272C17E782009B970F /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		91442C282C17E78B009B970F /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		91442C292C17E792009B970F /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		91442C2A2C17E79A009B970F /* TA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TA.h; sourceTree = "<group>"; };
+		91442C2B2C17E7A3009B970F /* Admin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Admin.h; sourceTree = "<group>"; };
+		91442C2C2C17E7AD009B970F /* Courses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
+		91442C2D2C17E7B6009B970F /* Assignments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assignments.h; sourceTree = "<group>"; };
+		91442C2E2C17E7BD009B970F /* Quizes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quizes.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +107,8 @@
 		91442BD32C17E4B2009B970F = {
 			isa = PBXGroup;
 			children = (
+				91442C212C17E6E2009B970F /* sqlite3.c */,
+				91442C222C17E6E2009B970F /* sqlite3.h */,
 				91442BDE2C17E4B2009B970F /* llms */,
 				91442BF02C17E4B3009B970F /* llmsTests */,
 				91442BFA2C17E4B3009B970F /* llmsUITests */,
@@ -99,6 +133,8 @@
 				91442BE12C17E4B2009B970F /* ContentView.swift */,
 				91442BE32C17E4B3009B970F /* Assets.xcassets */,
 				91442BE52C17E4B3009B970F /* llms.entitlements */,
+				91442C0B2C17E4DB009B970F /* C++ */,
+				91442C0A2C17E4D0009B970F /* Swift */,
 				91442BE62C17E4B3009B970F /* Preview Content */,
 			);
 			path = llms;
@@ -127,6 +163,56 @@
 				91442BFD2C17E4B3009B970F /* llmsUITestsLaunchTests.swift */,
 			);
 			path = llmsUITests;
+			sourceTree = "<group>";
+		};
+		91442C0A2C17E4D0009B970F /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				91442C112C17E530009B970F /* tabBar.swift */,
+				91442C0F2C17E511009B970F /* HomeView.swift */,
+				91442C132C17E53D009B970F /* ProfileView.swift */,
+				91442C152C17E547009B970F /* SubjectView.swift */,
+				91442C172C17E54E009B970F /* CourseView.swift */,
+				91442C192C17E55E009B970F /* LoginView.swift */,
+				91442C1B2C17E56A009B970F /* LockView.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		91442C0B2C17E4DB009B970F /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				91442C0E2C17E502009B970F /* Classes */,
+				91442C0C2C17E4E3009B970F /* Bridging */,
+			);
+			path = "C++";
+			sourceTree = "<group>";
+		};
+		91442C0C2C17E4E3009B970F /* Bridging */ = {
+			isa = PBXGroup;
+			children = (
+				91442C1D2C17E5B8009B970F /* main.h */,
+				91442C1F2C17E5C5009B970F /* main.cpp */,
+				91442C1E2C17E5C4009B970F /* llms-Bridging-Header.h */,
+			);
+			path = Bridging;
+			sourceTree = "<group>";
+		};
+		91442C0E2C17E502009B970F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				91442C252C17E722009B970F /* Util.h */,
+				91442C262C17E77B009B970F /* DB_helper.h */,
+				91442C282C17E78B009B970F /* User.h */,
+				91442C272C17E782009B970F /* Student.h */,
+				91442C292C17E792009B970F /* Teacher.h */,
+				91442C2A2C17E79A009B970F /* TA.h */,
+				91442C2B2C17E7A3009B970F /* Admin.h */,
+				91442C2C2C17E7AD009B970F /* Courses.h */,
+				91442C2D2C17E7B6009B970F /* Assignments.h */,
+				91442C2E2C17E7BD009B970F /* Quizes.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +283,7 @@
 				TargetAttributes = {
 					91442BDB2C17E4B2009B970F = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					91442BEC2C17E4B3009B970F = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -259,8 +346,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91442C232C17E6E2009B970F /* sqlite3.c in Sources */,
+				91442C242C17E6E2009B970F /* sqlite3.h in Sources */,
+				91442C102C17E511009B970F /* HomeView.swift in Sources */,
+				91442C182C17E54E009B970F /* CourseView.swift in Sources */,
+				91442C162C17E547009B970F /* SubjectView.swift in Sources */,
 				91442BE22C17E4B2009B970F /* ContentView.swift in Sources */,
+				91442C142C17E53D009B970F /* ProfileView.swift in Sources */,
+				91442C1C2C17E56A009B970F /* LockView.swift in Sources */,
 				91442BE02C17E4B2009B970F /* llmsApp.swift in Sources */,
+				91442C1A2C17E55E009B970F /* LoginView.swift in Sources */,
+				91442C202C17E5C5009B970F /* main.cpp in Sources */,
+				91442C122C17E530009B970F /* tabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,12 +508,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = llms/llms.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"llms/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/sqlite-amalgamation-3440200/sqlite3.h";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -437,6 +536,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "llms/C++/Bridging/llms-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,12 +548,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = llms/llms.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"llms/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/sqlite-amalgamation-3440200/sqlite3.h";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -473,6 +576,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "llms/C++/Bridging/llms-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

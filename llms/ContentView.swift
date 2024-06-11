@@ -1,19 +1,22 @@
 //
 //  ContentView.swift
-//  llms
+//  LMSS
 //
-//  Created by Sara Noor on 11/06/2024.
+//  Created by Sara Noor on 10/06/2024.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isLoggedIn: Bool = false
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if(isLoggedIn){
+                TabBar()
+            }
+            else{
+                LoginView(isLoggedIn: $isLoggedIn)
+            }
         }
         .padding()
     }
