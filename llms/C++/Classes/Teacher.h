@@ -9,28 +9,11 @@
 class Teacher :
     virtual public User
 {
-    //courses vector
-    //office hours
-    //credential
-    //title
-    
-    //function
-    //login
-    //have all TA
-    //login
-    //add studnets
-    //add marks(change marks)
-    //office hours
-    //remove student
-    //get student info
-    //course
-    //in course they can add asms and quizes
 protected:
     //acamdeic details
     int instruct_id;
     std::vector<Course> handling_courses;
     Time office_hours;
-    DB_helper* dbHelper;
 public:
     Teacher() {}
     Teacher(int uid, const char* _n, const char* _e, const char* _p, int T_ID): User(uid, _n, _e, _p, "teacher"), instruct_id(T_ID) {}

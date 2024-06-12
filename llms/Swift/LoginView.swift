@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    @State private var emailPointer: UnsafeMutablePointer<CChar>? = nil
+    @State private var passwordPointer: UnsafeMutablePointer<CChar>? = nil
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
     @Binding var isLoggedIn: Bool
     let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
     var body: some View{
@@ -23,6 +26,12 @@ struct LoginView: View {
                     .frame(width: 200, height: 200)
                     .padding()
                 
+               
+                .padding(.vertical)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.leading, -25)
+                
+                
                 VStack{
                     TextField("Enter your email", text:$email)
                         .font(.subheadline)
@@ -30,32 +39,43 @@ struct LoginView: View {
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
+                        .textInputAutocapitalization(.never)
                     SecureField("Enter your password", text: $password)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
+                        .textInputAutocapitalization(.never)
+                    
+                   
                     
                     NavigationLink {
-                        Text("Forgot Password")
+                        Text("Contact the administration")
                     }label: {
                         Text("Forgot Password")
                             .font(.footnote)
                             .fontWeight(.semibold)
                             .padding(.vertical)
                             .padding(.trailing, 28)
-                            
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     
                    
                     Button{
-                        email.withCString {cString in sendEmailToCPP(cString)}
+                        emailPointer = strdup(email)
+                        passwordPointer = strdup(password)
+                        logIn(emailPointer, passwordPointer)
+                        
+//                        email.withCString {cString in logIn(cString, password)}
                         let loginStatus = isUserLoggedIn()
                         if loginStatus == 0 {
                             isLoggedIn = true
+                        }
+                        else{
+                            Text("Retry, password or email incorrect!").foregroundColor(.gray)
+                                .font(.subheadline)
                         }
                       
                         

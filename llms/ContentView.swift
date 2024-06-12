@@ -17,6 +17,7 @@ struct ContentView: View {
             else{
                 LoginView(isLoggedIn: $isLoggedIn)
             }
+            //SubjectView(subjectName: "OOP")
         }
         .padding()
     }

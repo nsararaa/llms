@@ -10,9 +10,12 @@ extern "C"
 #endif
 
 const char * returnName();
-void sendEmailToCPP(const char *email);
+void logIn( char *email,  char *password);
 int isUserLoggedIn();
 const char * getStudentInfo();
+const char * getStudentCourses();
+void setIsLoggedIn(int logged);
+int getNoOfCourses();
 #ifdef __cplusplus
 }
 #endif

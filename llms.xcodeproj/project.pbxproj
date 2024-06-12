@@ -25,6 +25,8 @@
 		91442C232C17E6E2009B970F /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 91442C212C17E6E2009B970F /* sqlite3.c */; };
 		91442C242C17E6E2009B970F /* sqlite3.h in Sources */ = {isa = PBXBuildFile; fileRef = 91442C222C17E6E2009B970F /* sqlite3.h */; };
 		91442C302C17EFCF009B970F /* studentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91442C2F2C17EFCF009B970F /* studentInfo.swift */; };
+		91783FC32C19AEE200287F90 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91783FC22C19AEE200287F90 /* Course.swift */; };
+		91AEEE122C1952A700A4D2F6 /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AEEE112C1952A700A4D2F6 /* LogOutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,9 @@
 		91442C2D2C17E7B6009B970F /* Assignments.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Assignments.h; sourceTree = "<group>"; };
 		91442C2E2C17E7BD009B970F /* Quizes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quizes.h; sourceTree = "<group>"; };
 		91442C2F2C17EFCF009B970F /* studentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentInfo.swift; sourceTree = "<group>"; };
+		91783FC22C19AEE200287F90 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		91AEEE112C1952A700A4D2F6 /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
+		91D540892C19ED730038FEBD /* Announcement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Announcement.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +180,11 @@
 				91442C132C17E53D009B970F /* ProfileView.swift */,
 				91442C152C17E547009B970F /* SubjectView.swift */,
 				91442C172C17E54E009B970F /* CourseView.swift */,
+				91AEEE112C1952A700A4D2F6 /* LogOutView.swift */,
 				91442C192C17E55E009B970F /* LoginView.swift */,
 				91442C1B2C17E56A009B970F /* LockView.swift */,
 				91442C2F2C17EFCF009B970F /* studentInfo.swift */,
+				91783FC22C19AEE200287F90 /* Course.swift */,
 			);
 			path = Swift;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				91442C252C17E722009B970F /* Util.h */,
 				91442C262C17E77B009B970F /* DB_helper.h */,
 				91442C282C17E78B009B970F /* User.h */,
+				91D540892C19ED730038FEBD /* Announcement.h */,
 				91442C272C17E782009B970F /* Student.h */,
 				91442C292C17E792009B970F /* Teacher.h */,
 				91442C2A2C17E79A009B970F /* TA.h */,
@@ -355,11 +363,13 @@
 				91442C182C17E54E009B970F /* CourseView.swift in Sources */,
 				91442C302C17EFCF009B970F /* studentInfo.swift in Sources */,
 				91442C162C17E547009B970F /* SubjectView.swift in Sources */,
+				91AEEE122C1952A700A4D2F6 /* LogOutView.swift in Sources */,
 				91442BE22C17E4B2009B970F /* ContentView.swift in Sources */,
 				91442C142C17E53D009B970F /* ProfileView.swift in Sources */,
 				91442C1C2C17E56A009B970F /* LockView.swift in Sources */,
 				91442BE02C17E4B2009B970F /* llmsApp.swift in Sources */,
 				91442C1A2C17E55E009B970F /* LoginView.swift in Sources */,
+				91783FC32C19AEE200287F90 /* Course.swift in Sources */,
 				91442C202C17E5C5009B970F /* main.cpp in Sources */,
 				91442C122C17E530009B970F /* tabBar.swift in Sources */,
 			);
