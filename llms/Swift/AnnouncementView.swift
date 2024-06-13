@@ -20,8 +20,8 @@ struct AnnouncementView: View {
                 .ignoresSafeArea()
             
             VStack{
-                Text("Announcement").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -170)
-                    .foregroundColor(Color(maroon))
+//                Text("Announcement").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -170)
+//                    .foregroundColor(Color(maroon))
                 
                 TextField("Announce something to your class ", text:$announcementInput, axis: .vertical)
                                      .lineLimit(4, reservesSpace: true)
@@ -30,6 +30,7 @@ struct AnnouncementView: View {
                                      .background(Color(.systemGray6))
                                      .cornerRadius(10)
                                      .padding(.horizontal, 24)
+                                     .padding(.top, -15)
                                  Button(action: {
                                                  if announcementInput.isEmpty {
                                                      showAlert = true
@@ -46,7 +47,7 @@ struct AnnouncementView: View {
                                                      .padding()
                                                      .font(.system(size: 10))
                                                      .background( announcementInput.isEmpty ? Color(maroon) : Color.blue)
-                                                     .cornerRadius(10)
+                                                     .cornerRadius(14)
                                              }
                                              .padding(.top, 5)
                                              .padding(.leading, 260)

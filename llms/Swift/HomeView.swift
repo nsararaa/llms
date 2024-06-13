@@ -61,7 +61,7 @@ struct NavToCourseAnn: View {
                 .font(.system(size: 15))
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
-                .frame(width: 100, height: 70)
+                .frame(width: 100, height: 80)
                 .background(Color(maroon))
                 .cornerRadius(10)
                 .shadow(radius: 5)
@@ -124,38 +124,48 @@ struct HomeView: View {
                 
                 ////-----------------------------------------------------------------------------------------------------------------------
                 
+                Text("Announcements")
+                    .font(.system(size: 23))
+                    .fontWeight(.semibold)
+                    .padding(.leading, -170)
+                    .padding(.bottom, 20)
+                    .foregroundColor(Color(maroon))
+                
                 NavigationView {
                            VStack {
-                               Text("Announcements")
-                                   .font(.system(size: 23))
-                                   .fontWeight(.semibold)
-                                   .padding(.leading, -170)
-                                   .padding(.bottom, 20)
-                                   .foregroundColor(Color(maroon))
+                               
                                
                                ScrollView(.horizontal) {
-                                   HStack(spacing: 15) {
-                                       NavToCourseAnn(title: c1.name1)
-                                       NavToCourseAnn(title: c1.name2)
-                                       NavToCourseAnn(title: c1.name3)
-                                       NavToCourseAnn(title: c1.name4)
-                                       NavToCourseAnn(title: c1.name5)
-                                       if c1.noOfCourse == "6" {
-                                           NavToCourseAnn(title: c1.name6)
+                                   VStack{
+                                       HStack(spacing: 15) {
+                                           NavToCourseAnn(title: c1.name1)
+                                           NavToCourseAnn(title: c1.name2)
+                                           NavToCourseAnn(title: c1.name3)
+                                           NavToCourseAnn(title: c1.name4)
+                                           NavToCourseAnn(title: c1.name5)
+                                           if c1.noOfCourse == "6" {
+                                               NavToCourseAnn(title: c1.name6)
+                                           }
                                        }
                                    }
                                }
+                               
                            }
                            .padding(.bottom, 20)
-                           .frame(width: 390, height: 250)
+                           .frame(width: 390, height: 200)
                        }
-                       .frame(width: 400, height: 250)
-                       .border(Color.gray)
+                       .frame(width: 400, height: 200)
+                   //    .border(Color.gray)
                    
                 
                 
                 
                 ////-----------------------------------------------------------------------------------------------------------------------
+                Text("Recent Announcements")
+                    .font(.system(size: 14))
+                    .fontWeight(.semibold)
+                    .padding(.leading, -170)
+                    .foregroundColor(Color(maroon))
                 
                 ScrollView{
                     List(announcements, id: \.self) { announcement in
@@ -164,8 +174,9 @@ struct HomeView: View {
                     }
                     .listStyle(PlainListStyle())
                     .padding(.leading, 10)
-                    .frame(height: 100)
+                    .frame(height: 150)
                 }
+                .padding(.bottom, 20)
                 
                 if announcements.isEmpty {
                     Text("No recent announcements")
@@ -179,7 +190,7 @@ struct HomeView: View {
                     Text("Upcoming Deadlines")
                         .font(.system(size: 20))
                         .fontWeight(.semibold)
-                        .padding(.leading, -160)
+                        .padding(.leading, -140)
                         .foregroundColor(Color(maroon))
 
                     if upcomingDue == false {
@@ -209,6 +220,8 @@ struct HomeView: View {
                 self.cgpa = studentDetails.cgpa
                 self.major = studentDetails.major
                 self.semester = studentDetails.semester
+                
+                fetchAnnouncements()
             }
             
            

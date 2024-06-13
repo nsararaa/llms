@@ -46,7 +46,7 @@ public:
         return *this;
     }
 
-    // Getters
+    
     int getAnnId() const {
         return ann_id;
     }
@@ -67,7 +67,7 @@ public:
         return date_posted;
     }
 
-    // Setters
+    
     void setAnnId(int _aid) {
         ann_id = _aid;
     }

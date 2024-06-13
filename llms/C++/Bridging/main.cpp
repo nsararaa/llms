@@ -97,14 +97,13 @@ const char * getCourses(){
 const char * getAnnouncements(){
     static std::string details_courses;
     
-    //GetCoursesByStudentId()
+    
     announcements = db->getAnnouncement();
     
     std::ostringstream oss;
     noOfAnnouncements = announcements.size();
     oss << noOfAnnouncements<< ",";
-    //noofCourses, name,instructor, credit, day1, day2, start_time1, start_time2, end_time1, end_time2, grade
-    
+  
     for(auto a: announcements){
         oss << a->getTitle() << ","<< a->getContent() << ",";
     }
@@ -131,7 +130,7 @@ void setEmail(const char * email){
 
 void setAnnouncement(char * announcement){
     char * ann = announcement;
-    
+   //announcements.
     
 }
 void setAnnouncementCourse(char * course){
