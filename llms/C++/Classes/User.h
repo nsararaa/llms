@@ -4,7 +4,9 @@
 #include <iostream>
 #include "Util.h"
 #include <vector>
+#include "Announcement.h"
 using namespace std;
+
 
 class User {
 protected:
@@ -13,7 +15,7 @@ protected:
     const char* email_id;
     const char* password;
     const char* role;
-
+    static std::vector<Announcement*> total_announcements;
 public:
     User() : user_id(0), name(nullptr), email_id(nullptr), password(nullptr), role(nullptr) {}
 
@@ -85,6 +87,10 @@ public:
         return role;
     }
 
+    std::vector<Announcement*> getAnn() { return total_announcements; }
+
+
+
     // Setters
     void setUserId(int id) {
         user_id = id;
@@ -104,5 +110,8 @@ public:
 
     void setRole(const char* _role) {
         role = _role;
+    }
+    static void addAnnouncement(Announcement* announcement) {
+        total_announcements.push_back(announcement);
     }
 };

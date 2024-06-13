@@ -16,6 +16,11 @@ const char * getStudentInfo();
 const char * getStudentCourses();
 void setIsLoggedIn(int logged);
 int getNoOfCourses();
+const char * getCourses();
+void setAnnouncementCourse(char * course);
+void setAnnouncement(char * announcement);
+int getNoOfAnouncements();
+const char * getAnnouncements();
 #ifdef __cplusplus
 }
 #endif

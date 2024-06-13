@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authState: AuthState
     @State private var emailPointer: UnsafeMutablePointer<CChar>? = nil
     @State private var passwordPointer: UnsafeMutablePointer<CChar>? = nil
     @State private var email: String = ""
@@ -71,7 +72,8 @@ struct LoginView: View {
 //                        email.withCString {cString in logIn(cString, password)}
                         let loginStatus = isUserLoggedIn()
                         if loginStatus == 0 {
-                            isLoggedIn = true
+                            self.isLoggedIn = true
+                            authState.isLoggedIn = true
                         }
                         else{
                             Text("Retry, password or email incorrect!").foregroundColor(.gray)

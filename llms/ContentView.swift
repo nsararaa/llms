@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authState: AuthState
     @State private var isLoggedIn: Bool = false
     var body: some View {
         VStack {
-            if(isLoggedIn){
+            if authState.isLoggedIn {
                 TabBar()
             }
-            else{
-                LoginView(isLoggedIn: $isLoggedIn)
+            else {
+                LoginView( isLoggedIn: .constant(true))
             }
-            //SubjectView(subjectName: "OOP")
         }
         .padding()
     }

@@ -7,18 +7,46 @@
 
 import SwiftUI
 
+
 struct LockView: View {
-    @State private var isLoggedIn: Bool = false
-    
+    @EnvironmentObject var authState: AuthState
+    @State private var showAlert = false
+
     var body: some View {
-        if(isLoggedIn){
-            TabBar()
-        }
-        else{
-            LoginView(isLoggedIn: $isLoggedIn)
+        let maroon = Color(UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0))
+        ZStack{
+            LinearGradient(gradient: Gradient(colors:[maroon, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea(.all)
+            VStack {
+                Button(action: {
+                                   showAlert = true
+                               }) {
+                                   Image(systemName: "lock.fill")
+                                       .resizable()
+                                       .scaledToFit()
+                                       .frame(width: 30, height: 30)
+                                       .padding()
+                                       .foregroundColor(.white)
+                                       
+                               }
+                .padding()
+                .font(.title)
+                .foregroundColor(.white)
+                .alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text("Are you sure you want to log out?"),
+                        primaryButton: .destructive(Text("Yes")) {
+                            authState.isLoggedIn = false
+                        },
+                        secondaryButton: .cancel(Text("No"))
+                    )
+                }
+            }
+            .padding()
         }
     }
 }
+
 
 struct LockView_Previews: PreviewProvider {
     static var previews: some View {

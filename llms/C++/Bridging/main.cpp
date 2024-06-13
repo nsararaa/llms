@@ -11,7 +11,7 @@
 #include "Student.h"
 #include "Courses.h"
 #include "DB_helper.h"
-
+#include "Announcement.h"
 
 static std::string email_recieved;
 static std::string logged_in_email;
@@ -20,7 +20,8 @@ static bool isLogged = false;
 //static DB_helper m("/Users/saranoor/Downloads/Xcode/llms/oop_project.db");
 static Student *stu;
 static std::vector <Course*> courses;
-static int noOfCourses;
+static std::vector <Announcement*> announcements;
+static int noOfCourses, noOfAnnouncements;
 static DB_helper * db;
 
 
@@ -77,6 +78,47 @@ const char * getStudentCourses(){
     return c_details;
 }
 
+const char * getCourses(){
+    static std::string course_list;
+    courses = db->GetCoursesByEmail();
+    std::ostringstream oss;
+    oss << noOfCourses<< ",";
+    
+    for(auto c: courses){
+        oss << c->getCourseName()<< ",";
+    }
+
+    oss << "," << ",";
+    course_list = oss.str();
+    const char* c_details = course_list.c_str();
+    return c_details;
+}
+
+const char * getAnnouncements(){
+    static std::string details_courses;
+    
+    //GetCoursesByStudentId()
+    announcements = db->getAnnouncement();
+    
+    std::ostringstream oss;
+    noOfAnnouncements = announcements.size();
+    oss << noOfAnnouncements<< ",";
+    //noofCourses, name,instructor, credit, day1, day2, start_time1, start_time2, end_time1, end_time2, grade
+    
+    for(auto a: announcements){
+        oss << a->getTitle() << ","<< a->getContent() << ",";
+    }
+
+    oss << "," << ","<<"," << ","<<"," << ","<<"," << ","<< ",";
+    details_courses = oss.str();
+    const char* c_details = details_courses.c_str();
+    return c_details;
+}
+
+int getNoOfAnouncements(){
+    return noOfAnnouncements;
+}
+
 
 void setEmail(const char * email){
     static int i =0;
@@ -86,6 +128,17 @@ void setEmail(const char * email){
     }
     i++;
 }
+
+void setAnnouncement(char * announcement){
+    char * ann = announcement;
+    
+    
+}
+void setAnnouncementCourse(char * course){
+   
+    
+}
+
 
 extern "C" void logIn( char *email,  char *password) {
     if (email != nullptr) {

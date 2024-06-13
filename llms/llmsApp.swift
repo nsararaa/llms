@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import Combine
 
+class AuthState: ObservableObject {
+    @Published var isLoggedIn: Bool = false
+}
 @main
 struct llmsApp: App {
-    
+    @StateObject private var authState = AuthState()
     var body: some Scene {
         WindowGroup {
             
             ContentView()
+                .environmentObject(authState)
         }
     }
 }

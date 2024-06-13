@@ -18,12 +18,12 @@ private:
     std::string content;
     date date_posted;
     //sqlite3* db;
-    //static int next_ann_id;
+    static int next_ann_id;
 
 public:
     // Default constructor
     Announcement()
-        : ann_id(0), course_id(0), date_posted({ 0 }) {}
+        : ann_id(0), course_id(0), date_posted({ 0 }), user_id(0) {}
 
     // Parameterized constructor
     Announcement(int _aid, int uid ,int _cid, const std::string& _t, const std::string& _c, date _date)
@@ -31,7 +31,7 @@ public:
 
     // Copy constructor
     Announcement(const Announcement& other)
-        : ann_id(other.ann_id), course_id(other.course_id), title(other.title),
+        : ann_id(other.ann_id), user_id(other.user_id), course_id(other.course_id), title(other.title),
         content(other.content), date_posted(other.date_posted) {}
 
     // Assignment operator
@@ -88,38 +88,10 @@ public:
         date_posted = _date;
     }
 
-    //bool addAnnouncement(int announcement_ID, const std::string& title, const std::string& content, date date_posted) {
-    //    std::string insertSql = "INSERT INTO announcements (title, content, day, month, year) VALUES (?, ?, ?, ?, ?);";
-    //    sqlite3_stmt* stmt;
-
-    //    if (sqlite3_prepare_v2(db, insertSql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
-    //        std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
-    //        return false;
-    //    }
-
-    //    sqlite3_bind_text(stmt, 1, title.c_str(), -1, SQLITE_STATIC);
-    //    sqlite3_bind_text(stmt, 2, content.c_str(), -1, SQLITE_STATIC);
-    //    sqlite3_bind_int(stmt, 3, date_posted.day);
-    //    sqlite3_bind_int(stmt, 4, date_posted.month);
-    //    sqlite3_bind_int(stmt, 5, date_posted.year);
-
-    //    int result = sqlite3_step(stmt);
-    //    sqlite3_finalize(stmt);
-
-    //    if (result != SQLITE_DONE) {
-    //        std::cerr << "Error inserting data: " << sqlite3_errmsg(db) << std::endl;
-    //        return false;
-    //    }
-
-    //    std::cout << "Announcement added successfully!" << std::endl;
-    //    return true;
-    //}
-  /*  static void initializeNextAnnouncementId(int initialId) { next_ann_id = initialId; }
+    static void initializeNextAnnouncementId(int initialId) { next_ann_id = initialId; }
     static int getnextannouncementid() {
         next_ann_id++;
-        return next_ann_id; }*/
+        return next_ann_id; }
 };
-
-//int Announcement::next_ann_id = 13; // Initialize static member variable
 
 #endif /* Announcement_h */

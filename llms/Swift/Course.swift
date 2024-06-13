@@ -1,45 +1,99 @@
 //
-//  Course.swift
-//  llms
+//struct ContentView: View {
+//    @State private var announcements: [String] = ["quiz next class", "class cancel"]
+//    @State private var announcementInput = ""
+//    @State private var upcomingDue: Bool = false
+//    @State private var Deadlines = ""
 //
-//  Created by Sara Noor on 12/06/2024.
+//    let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
 //
-
-import Foundation
-
+//    var body: some View {
+//        ZStack {
+//            LinearGradient(gradient: Gradient(colors:[.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
+//                .ignoresSafeArea()
+//            VStack {
+//                HStack {
+//                    VStack {
+//                        VStack(alignment: .leading) {
+//                            Text("Home")
+//                                .font(.system(size: 32))
+//                                .fontWeight(.semibold)
+//                                .foregroundColor(Color(maroon))
+//                        }
+//                        .padding(.leading, -20)
 //
-//struct Course: Identifiable {
-//    var id = UUID()
-//    var noOfCourses: String
-//    var name: String
-//    var creditHours: String
-//    var day1: String
-//    var day2: String
-//    var s_time1: String
-//    var s_time2: String
-//    var e_time1: String
-//    var e_time2: String
-//    var grade: String
-//}
+//                        VStack {
+//                            Text("Welcome Sara")
+//                        }
+//                        .padding(.leading, 20)
+//                    }
+//                }
+//                .padding(.top, 10)
+//                .padding(.bottom, 20)
 //
-//func CourseInfo() -> Course {
-//    guard let cString = getStudentCourses() else {
-//        return Course(noOfCourses: "", name: "", creditHours: "", day1: "", day2: "", s_time1: "", s_time2: "", e_time1: "", e_time2: "", grade: "")
+//                NavigationView {
+//                    VStack {
+//                        Text("Announcements")
+//                            .font(.system(size: 23))
+//                            .fontWeight(.semibold)
+//                            .padding(.leading, -170)
+//                            .padding(.bottom, 20)
+//                            .foregroundColor(Color(maroon))
+//
+//                        ScrollView(.horizontal) {
+//                            HStack(spacing: 15) {
+//                                NavToCourseAnn(title: "CS")
+//                                NavToCourseAnn(title: "DLD")
+//                                NavToCourseAnn(title: "PnS")
+//                                NavToCourseAnn(title: "LA")
+//                                NavToCourseAnn(title: "OOP")
+//                            }
+//                        }
+//                    }
+//                    .padding(.bottom, 20)
+//                    .frame(width: 390, height: 250)
+//                }
+//                .frame(width: 400, height: 250)
+//                .border(Color.gray)
+//
+//                ScrollView{
+//                    List(announcements, id: \.self) { announcement in
+//                        Text(announcement)
+//                            .font(.system(size: 14))
+//                    }
+//                    .listStyle(PlainListStyle())
+//                    .padding(.leading, 10)
+//                    .frame(height: 100)
+//                }
+//
+//                VStack {
+//                    Text("Upcoming Deadlines")
+//                        .font(.system(size: 20))
+//                        .fontWeight(.semibold)
+//                        .padding(.leading, -160)
+//                        .foregroundColor(Color(maroon))
+//
+//                    if upcomingDue == false {
+//                        Text("Wohoo no work due soon")
+//                            .padding(.top, -3)
+//                            .padding(.leading, -150)
+//                            .foregroundColor(.gray)
+//                    } else {
+//                        Text(Deadlines)
+//                            .padding(.top, -3)
+//                            .padding(.leading, -150)
+//                            .foregroundColor(.gray)
+//                    }
+//                    
+//
+//                    Spacer()
+//                }
+//
+//            }
+//            .padding()
+//
+//        }
+//
 //    }
-//    let courseInfo = String(cString: cString).components(separatedBy: ",")
-//    if courseInfo.count == 10 {
-//        return Course(
-//            noOfCourses: courseInfo[0],
-//            name: courseInfo[1],
-//            creditHours: courseInfo[2],
-//            day1: courseInfo[3],
-//            day2: courseInfo[4],
-//            s_time1: courseInfo[5],
-//            s_time2: courseInfo[6],
-//            e_time1: courseInfo[7],
-//            e_time2: courseInfo[8],
-//            grade: courseInfo[9]
-//        )
-//    }
-//    return Course(noOfCourses: "", name: "", creditHours: "", day1: "", day2: "", s_time1: "", s_time2: "", e_time1: "", e_time2: "", grade: "")
+//
 //}

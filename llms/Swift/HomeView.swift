@@ -6,24 +6,79 @@
 //
 
 import SwiftUI
-struct CustomButton: View {
+
+
+
+struct CourseList {
+    let noOfCourse: String
+    let name1: String
+    let name2: String
+    let name3: String
+    let name4: String
+    let name5: String
+    let name6: String
+    
+}
+
+func CourseNames() -> CourseList {
+    guard let cString = getCourses() else {
+        return CourseList(
+            noOfCourse: "", //1 9 17,25,,33,40
+            name1: "", //8
+            name2: "", //2
+            name3: "", //3
+            name4: "", //4
+            name5: "", //5
+            name6: "" //6
+               )
+    }
+
+    let courseInfo = String(cString: cString).components(separatedBy: ",")
+
+    
+
+    return CourseList(
+        noOfCourse: courseInfo[0],
+        name1: courseInfo[1],
+        name2: courseInfo[2],
+        name3: courseInfo[3],
+        name4: courseInfo[4],
+        name5: courseInfo[5],
+        name6: courseInfo[6]
+    )
+}
+
+struct NavToCourseAnn: View {
+    let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
     let title: String
-    let customColor = Color(UIColor.systemGray4)
+    
     
     var body: some View {
-        Button(action: {}) {
+       
+        NavigationLink(destination: AnnouncementView()) {
+            
             Text(title)
-                .font(.system(size: 20))
+                .font(.system(size: 15))
                 .fontWeight(.semibold)
-                .foregroundColor(.black)
-                .padding()
-                .frame(minWidth: 150, minHeight: 110)
+                .foregroundColor(.white)
+                .frame(width: 100, height: 70)
+                .background(Color(maroon))
+                .cornerRadius(10)
+                .shadow(radius: 5)
         }
-        .buttonStyle(.borderedProminent)
-        .tint(customColor)
+        .onAppear{
+            let SubNamePtr: UnsafeMutablePointer<CChar> = strdup(title)
+            setAnnouncementCourse(SubNamePtr)
+        }
+        
+        
+     
     }
 }
+
+
 struct HomeView: View {
+    @State private var announcements: [String] = []
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var rollNo: String = ""
@@ -36,6 +91,8 @@ struct HomeView: View {
     @State private var upcomingDue: Bool = false
     @State private var Deadlines = ""
     
+    
+    var c1: CourseList  = CourseNames()
     let maroon = UIColor(red: 0x69 / 255, green: 0x1A / 255, blue: 0x1A / 255, alpha: 1.0)
     var body: some View {
         @State var color: Color = .white
@@ -43,7 +100,7 @@ struct HomeView: View {
         ZStack{
             LinearGradient(gradient: Gradient(colors:[.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            VStack(){
+            VStack {
                 HStack{
                     VStack{
                         VStack(alignment: .leading){
@@ -51,6 +108,7 @@ struct HomeView: View {
                             
                         }
                         .padding(.leading, -20)
+                        
                         VStack{
                             Text("Welcome \(name)")
                         }
@@ -63,54 +121,85 @@ struct HomeView: View {
                 }
                 .padding(.top, 10)
                 .padding(.bottom, 20)
-                //.background(.black)
                 
-               
-                VStack(){
-                    Text("Announcements").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -170)
-                        .foregroundColor(Color(maroon))
-            
-                    
-                    TextField("Announce something to your class ", text:$announcementInput, axis: .vertical)
-                        .lineLimit(4, reservesSpace: true)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
-                    
-                                             
+                ////-----------------------------------------------------------------------------------------------------------------------
+                
+                NavigationView {
+                           VStack {
+                               Text("Announcements")
+                                   .font(.system(size: 23))
+                                   .fontWeight(.semibold)
+                                   .padding(.leading, -170)
+                                   .padding(.bottom, 20)
+                                   .foregroundColor(Color(maroon))
+                               
+                               ScrollView(.horizontal) {
+                                   HStack(spacing: 15) {
+                                       NavToCourseAnn(title: c1.name1)
+                                       NavToCourseAnn(title: c1.name2)
+                                       NavToCourseAnn(title: c1.name3)
+                                       NavToCourseAnn(title: c1.name4)
+                                       NavToCourseAnn(title: c1.name5)
+                                       if c1.noOfCourse == "6" {
+                                           NavToCourseAnn(title: c1.name6)
+                                       }
+                                   }
+                               }
+                           }
+                           .padding(.bottom, 20)
+                           .frame(width: 390, height: 250)
+                       }
+                       .frame(width: 400, height: 250)
+                       .border(Color.gray)
+                   
+                
+                
+                
+                ////-----------------------------------------------------------------------------------------------------------------------
+                
+                ScrollView{
+                    List(announcements, id: \.self) { announcement in
+                        Text(announcement)
+                            .font(.system(size: 14))
+                    }
+                    .listStyle(PlainListStyle())
+                    .padding(.leading, 10)
+                    .frame(height: 100)
                 }
-                .padding(.bottom, 20)
-                ScrollView(.horizontal){
-                    HStack(spacing: 15){
-                        
-                        
-                        CustomButton(title: "Semester: \(semester)")
-                        CustomButton(title: "GPA: \(gpa)")
-                        CustomButton(title: "CGPA: \(cgpa)")
-                        CustomButton(title: "Degree: \(major)")
-                        
-                        
-                    }.padding(.leading, 10)
+                
+                if announcements.isEmpty {
+                    Text("No recent announcements")
+                        .padding(.top, -3)
+                        .padding(.leading, -150)
+                        .foregroundColor(.gray)
                 }
-                VStack{
-                    Text("Upcoming Deadlines").font(.system(size:20)).fontWeight(.semibold).padding(.leading, -160)
-                        .padding(.top, 30)
+                
+                ////-----------------------------------------------------------------------------------------------------------------------
+                VStack {
+                    Text("Upcoming Deadlines")
+                        .font(.system(size: 20))
+                        .fontWeight(.semibold)
+                        .padding(.leading, -160)
                         .foregroundColor(Color(maroon))
-                    if upcomingDue == false{
-                        Text("Wohoo no work due soon").padding(.top, -3)
+
+                    if upcomingDue == false {
+                        Text("Wohoo no work due soon")
+                            .padding(.top, -3)
+                            .padding(.leading, -150)
+                            .foregroundColor(.gray)
+                    } else {
+                        Text(Deadlines)
+                            .padding(.top, -3)
                             .padding(.leading, -150)
                             .foregroundColor(.gray)
                     }
-                    else {
-                        Text(Deadlines).padding(.top, -3)
-                            .padding(.leading, -150)
-                            .foregroundColor(.gray)
-                    }
+                    
+
+                    Spacer()
                 }
-                Spacer()
+
             }
+            .padding()
             .onAppear {
                 let studentDetails = StudentInfo()
                 self.name = studentDetails.name
@@ -125,6 +214,20 @@ struct HomeView: View {
            
         }
     }
+    
+    func formatAnnounc(from announcementString: String) {
+            let components = announcementString.components(separatedBy: ",")
+        let noOfAnnouncements = getNoOfAnouncements()
+        let fetchedAnnouncements = Array(components.dropFirst().prefix(Int(noOfAnnouncements)))
+            announcements = fetchedAnnouncements
+        }
+    func fetchAnnouncements() {
+          
+          if let cString = getAnnouncements() {
+              let announcementString = String(cString: cString)
+              formatAnnounc(from: announcementString)
+          }
+      }
 }
 
 struct HomeView_Previews: PreviewProvider {

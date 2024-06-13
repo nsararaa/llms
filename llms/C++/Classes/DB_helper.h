@@ -325,25 +325,29 @@ public:
         dateStream << dateObj.day << '/' << dateObj.month << '/' << dateObj.year;
         return dateStream.str();
     }
-    bool addAnnouncement(const std::string& title, const std::string& content, date date_posted) {
-        std::string insertSql = "INSERT INTO announcements (title, content, date_posted) VALUES (?, ?, ?, ?, ?);";
+
+    bool addAnnouncement(const int announcement_id, const int user_id, const int course_id, const std::string& title, const std::string& content, date date_posted) {
+        std::string insertSql = "INSERT INTO announcements (announcement_id, user_id, course_id, title, content, date_posted) VALUES (? ,?, ?, ?, ?, ?);";
         sqlite3_stmt* stmt;
 
         if (sqlite3_prepare_v2(db, insertSql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
-            std::cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
+            std::cout << "Failed to prepare statement: " << sqlite3_errmsg(db) << std::endl;
             return false;
         }
 
         std::string str_date = dateToString(date_posted);
-        sqlite3_bind_text(stmt, 3, title.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 4, content.c_str(), -1, SQLITE_STATIC);
-        sqlite3_bind_text(stmt, 5, str_date.c_str(), -1, SQLITE_STATIC);
+        sqlite3_bind_int(stmt, 1, announcement_id);
+        sqlite3_bind_int(stmt, 2, user_id);
+        sqlite3_bind_int(stmt, 3, course_id);
+        sqlite3_bind_text(stmt, 4, title.c_str(), -1, SQLITE_STATIC);
+        sqlite3_bind_text(stmt, 5, content.c_str(), -1, SQLITE_STATIC);
+        sqlite3_bind_text(stmt, 6, str_date.c_str(), -1, SQLITE_STATIC);
 
         int result = sqlite3_step(stmt);
         sqlite3_finalize(stmt);
 
         if (result != SQLITE_DONE) {
-            std::cerr << "Error inserting data: " << sqlite3_errmsg(db) << std::endl;
+            std::cout << "Error inserting data: " << sqlite3_errmsg(db) << std::endl;
             return false;
         }
 
