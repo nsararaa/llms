@@ -1,4 +1,4 @@
-## Architecture Overview# Learning Management System (LMS)
+# Learning Management System (LMS)
 
 ![Swift](https://img.shields.io/badge/Swift-5.5-orange.svg)
 ![C](https://img.shields.io/badge/C-11-blue.svg)
