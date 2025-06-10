@@ -1,4 +1,3 @@
-
 ## Architecture Overview# Learning Management System (LMS)
 
 ![Swift](https://img.shields.io/badge/Swift-5.5-orange.svg)
@@ -27,7 +26,6 @@ LMS System Architecture
 ├── Database Layer (C) - MySQL interface and query optimization
 └── MySQL Database - Data persistence
 
-
 ## Prerequisites
 
 ### For Frontend Development
@@ -50,10 +48,11 @@ LMS System Architecture
    cd llms/backend
 
 ## Screenshots
-![WhatsApp Image 2025-06-10 at 01 41 38](https://github.com/user-attachments/assets/1c5c78a3-a840-4790-9694-4ea998a12b76)
-![WhatsApp Image 2025-06-10 at 01 41 37](https://github.com/user-attachments/assets/7b9beef8-30bd-4870-940d-2528667c6936)
-![WhatsApp Image 2025-06-10 at 01 41 37 (2)](https://github.com/user-attachments/assets/ae495ecc-48fb-44c8-b902-9ef9075693b9)
-![WhatsApp Image 2025-06-10 at 01 41 37 (1)](https://github.com/user-attachments/assets/d5df0b81-524b-4655-82a8-b44fae4f4265)
 
-
-
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1c5c78a3-a840-4790-9694-4ea998a12b76" width="300" />
+  <img src="https://github.com/user-attachments/assets/7b9beef8-30bd-4870-940d-2528667c6936" width="300" />
+  <br>
+  <img src="https://github.com/user-attachments/assets/ae495ecc-48fb-44c8-b902-9ef9075693b9" width="300" />
+  <img src="https://github.com/user-attachments/assets/d5df0b81-524b-4655-82a8-b44fae4f4265" width="300" />
+</div>
